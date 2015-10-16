@@ -1,0 +1,12 @@
+{
+    "name": "nousefreak/calculator",
+    "authors": [
+        {
+            "name": "Dries De Peuter",
+            "email": "dries@nousefreak.be"
+        }
+    ],
+    "autoload": {
+        "psr-4": {"NoUseFreak\\Calculator\\": "src/"}
+    }
+}
