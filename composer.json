@@ -8,5 +8,11 @@
     ],
     "autoload": {
         "psr-4": {"NoUseFreak\\Calculator\\": "src/"}
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^5.0"
+    },
+    "autoload-dev": {
+        "psr-4": {"NoUseFreak\\Calculator\\Tests\\": "tests/"}
     }
 }

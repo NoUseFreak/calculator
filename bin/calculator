@@ -1,0 +1,29 @@
+#!/usr/bin/env php
+<?php
+/**
+ * This file is part of the Calculator package.
+ *
+ * (c) Dries De Peuter <dries@nousefreak.be>
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
+use NoUseFreak\Calculator\Lexer\Map;
+use NoUseFreak\Calculator\Lexer\Lexer;
+use NoUseFreak\Calculator\Token;
+use NoUseFreak\Calculator\Calculator;
+use NoUseFreak\Calculator\Helper\InputHelper;
+
+require_once __DIR__.'/../vendor/autoload.php';
+
+$tokenMap = new Map();
+$tokenMap->addToken(new Token\NumberDefinition());
+$tokenMap->addToken(new Token\PlusDefinition());
+$tokenMap->addToken(new Token\MinusDefinition());
+$tokenMap->addToken(new Token\MultiplyDefinition());
+
+$lexer = new Lexer($tokenMap);
+$inputHelper = new InputHelper();
+
+$calculator = new Calculator($lexer);
+echo $calculator->calculate($inputHelper->resolveFromArgs()) . PHP_EOL;
